@@ -1,0 +1,409 @@
+/* ==========================================================================
+   Base Reset & Custom Color Profile
+   ========================================================================== */
+:root {
+    --light-gray: #f9f9f9;
+    --gray-cyan: #8e9f9f;
+    --light-crimson: #dfc8ce;
+    --pastel-gray-purple: #b8afc6;
+    --gray-purple: #776b89;
+    --gray-purple-dark: #5f5470;
+    --gray-light-red: #fff4f7;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Merriweather', Georgia, serif;
+    background: var(--light-gray);
+    color: var(--gray-purple);
+    line-height: 1.65;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+input, button {
+    font-family: inherit;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 12px 0;
+}
+
+/* ==========================================================================
+   Clean Header
+   ========================================================================== */
+header {
+    background: var(--pastel-gray-purple);
+    border-bottom: 1px solid var(--gray-cyan);
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(119, 107, 137, 0.12);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 14px 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-badge {
+    background: var(--gray-purple);
+    color: var(--light-gray);
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.98rem;
+}
+
+.brand-subtitle {
+    color: var(--gray-purple-dark);
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   Compact Hero Banner
+   ========================================================================== */
+.hero {
+    /* background: #dfc8ce; */
+    background: var(--gray-purple);
+    color: var(--light-gray);
+    padding: 28px 20px 22px;
+    text-align: center;
+    border-bottom: 1px solid rgba(142, 159, 159, 0.25);
+}
+
+.hero-content {
+    max-width: 740px;
+    margin: 0 auto;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.hero-content h1 {
+    font-size: 2rem;
+    color: var(--light-crimson);
+    margin-bottom: 8px;
+    font-weight: 900;
+}
+
+.hero-content p {
+    font-size: 0.95rem;
+    color: #fff4f7;;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   Evaluator Grid & Cards
+   ========================================================================== */
+.evaluator-section {
+    padding: 18px 0 32px;
+}
+
+.evaluator-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 28px;
+    align-items: stretch;
+}
+
+.card {
+    background: var(--white);
+    padding: 28px;
+    border-radius: 14px;
+    border: 1.5px solid var(--gray-cyan);
+    box-shadow: 0 8px 20px #8e9f9f82;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card h2 {
+    color: var(--gray-purple);
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+}
+
+/* Form Elements */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    color: var(--gray-purple-dark);
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 11px 14px;
+    background: var(--light-gray);
+    border: 1.5px solid var(--pastel-gray-purple);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: var(--gray-purple-dark);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.form-group input::placeholder {
+    color: var(--gray-cyan);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--gray-purple);
+    box-shadow: 0 0 0 3px rgba(184, 175, 198, 0.35);
+    background: var(--white);
+}
+
+.hint {
+    display: block;
+    font-size: 0.74rem;
+    color: var(--gray-cyan);
+    margin-top: 4px;
+}
+
+.primary-btn {
+    width: 100%;
+    padding: 13px 22px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    background: var(--gray-purple);
+    color: var(--light-gray);
+    box-shadow: 0 4px 12px rgba(119, 107, 137, 0.28);
+    transition: all 0.25s ease;
+    margin-top: 4px;
+}
+
+.primary-btn:hover {
+    background: var(--gray-purple-dark);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Result Card Styling
+   ========================================================================== */
+.empty-state {
+    text-align: center;
+    padding: 42px 20px;
+    background: var(--light-gray);
+    border-radius: 10px;
+    border: 1.5px solid var(--pastel-gray-purple);
+    color: var(--gray-cyan);
+    font-size: 0.92rem;
+}
+
+.empty-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.grade-showcase {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: #8e9f9f47;
+    padding: 20px 22px;
+    border-radius: 12px;
+    border: 1.5px solid var(--pastel-gray-purple);
+}
+
+.grade-obtained {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-right: 22px;
+    border-right: 1.5px solid var(--pastel-gray-purple);
+    min-width: 125px;
+    text-align: center;
+}
+
+.obtained-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #5f5470;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.grade-letter {
+    font-size: 2.6rem;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--gray-purple);
+}
+
+.grade-letter.fail {
+    color: #9e4758;
+}
+
+.grade-gpa {
+    font-size: 0.8rem;
+    color: var(--gray-purple-dark);
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+.grade-meta h3 {
+    color: var(--gray-purple);
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+}
+
+.grade-meta p {
+    font-size: 0.86rem;
+    margin-bottom: 5px;
+    color: var(--gray-purple-dark);
+}
+
+.pill {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    background: var(--light-crimson);
+    color: var(--gray-purple-dark);
+    font-weight: 700;
+    font-size: 0.82rem;
+}
+
+.pill.purple {
+    background: var(--pastel-gray-purple);
+    color: var(--light-gray);
+}
+
+.threshold-box {
+    margin-top: 18px;
+}
+
+.threshold-box h4 {
+    color: var(--gray-purple-dark);
+    font-size: 0.86rem;
+    margin-bottom: 10px;
+}
+
+.threshold-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(52px, 1fr));
+    gap: 6px;
+}
+
+.cutoff-chip {
+    background: var(--light-gray);
+    border: 1px solid var(--gray-cyan);
+    border-radius: 8px;
+    padding: 6px 4px;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--gray-purple-dark);
+}
+
+.cutoff-chip strong {
+    display: block;
+    color: var(--gray-purple);
+    font-size: 0.82rem;
+}
+
+.cutoff-chip.active-grade {
+    background: var(--gray-purple);
+    border-color: var(--gray-purple);
+    color: var(--light-gray);
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(119, 107, 137, 0.3);
+}
+
+.cutoff-chip.active-grade strong {
+    color: var(--light-crimson);
+}
+
+/* ==========================================================================
+   Footer & Responsive Media Queries
+   ========================================================================== */
+footer {
+    background: var(--gray-purple);
+    color: var(--gray-light-red);
+    text-align: center;
+    padding: 16px 0;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 860px) {
+    .evaluator-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-content h1 {
+        font-size: 1.7rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .grade-showcase {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .grade-obtained {
+        padding-right: 0;
+        padding-bottom: 14px;
+        border-right: none;
+        border-bottom: 1.5px solid var(--pastel-gray-purple);
+        width: 100%;
+    }
+}
