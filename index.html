@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCA Relative Grade Evaluator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Relative Grade Calculator</h1>
+                <p>Enter your course's Modified Class Average (MCA) and your obtained marks to evaluate your relative grade.</p>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section class="evaluator-section">
+            <div class="container">
+                <div class="evaluator-grid">
+
+                    <div class="card form-card">
+                        <h2>Course Details</h2>
+                        <form id="gradeForm">
+                            <div class="form-group">
+                                <label for="courseName">Course Code / Name (Optional)</label>
+                                <input type="text" id="courseName" placeholder="e.g. CS-1002 Programming Fundamentals">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="mcaInput">Modified Class Average (MCA)</label>
+                                    <input type="number" id="mcaInput" step="0.01" min="30" max="91" placeholder="30-91" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="marksInput">Your Obtained Marks</label>
+                                    <input type="number" id="marksInput" step="0.01" min="0" max="100" placeholder="0-100" required>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="primary-btn">Evaluate Grade</button>
+                        </form>
+                    </div>
+
+                    <!-- Result Card -->
+                    <div class="card result-card" id="resultCard">
+                        <h2>Evaluation Result</h2>
+                        
+                        <div id="emptyState" class="empty-state">
+                            <div class="empty-icon"></div>
+                            <p>Enter your MCA and marks on the left to calculate your relative grade and view the cutoffs for your class average.</p>
+                        </div>
+
+                        <div id="resultContent" class="result-content hidden">
+                            <div class="grade-showcase">
+                                <div class="grade-obtained">
+                                    <span class="obtained-label">Grade Obtained</span>
+                                    <span id="earnedGrade" class="grade-letter">A-</span>
+                                    <span id="gradePoints" class="grade-gpa">3.67 GPA</span>
+                                </div>
+                                <div class="grade-meta">
+                                    <h3 id="displayCourseName">Evaluated Course</h3>
+                                    <p><strong>Rounded MCA Used:</strong> <span id="roundedMcaVal" class="pill">65</span></p>
+                                    <p><strong>Baseline Grade on MCA:</strong> <span id="baselineMcaGrade" class="pill purple">B</span></p>
+                                    <p><strong>Your Rounded Marks:</strong> <span id="roundedMarksVal">74</span> / 100</p>
+                                </div>
+                            </div>
+
+                            <!-- Active Row Threshold Strip -->
+                            <div class="threshold-box">
+                                <h4>Cutoffs for MCA <span id="stripMcaLabel">65</span></h4>
+                                <div id="thresholdStrip" class="threshold-strip"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>MCA Relative Grade Calculator</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
